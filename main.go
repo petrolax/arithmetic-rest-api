@@ -25,7 +25,7 @@ func Add(c *gin.Context) {
 	if aString == "" || bString == "" {
 		c.JSON(http.StatusNotAcceptable, map[string]interface{}{
 			"Success": false,
-			"ErrCode": "406",
+			"ErrCode": "One of the parameters haven't value or didn't exist",
 			"Value":   nil,
 		})
 		return
@@ -35,7 +35,7 @@ func Add(c *gin.Context) {
 	if err != nil {
 		c.JSON(http.StatusUnprocessableEntity, map[string]interface{}{
 			"Success": false,
-			"ErrCode": "422",
+			"ErrCode": "Parameter 'a' is not a number",
 			"Value":   nil,
 		})
 		return
@@ -45,7 +45,7 @@ func Add(c *gin.Context) {
 	if err != nil {
 		c.JSON(http.StatusUnprocessableEntity, map[string]interface{}{
 			"Success": false,
-			"ErrCode": "422",
+			"ErrCode": "Parameter 'b' is not a number",
 			"Value":   nil,
 		})
 		return
@@ -65,7 +65,7 @@ func Sub(c *gin.Context) {
 	if aString == "" || bString == "" {
 		c.JSON(http.StatusNotAcceptable, map[string]interface{}{
 			"Success": false,
-			"ErrCode": "406",
+			"ErrCode": "One of the parameters haven't value or didn't exist",
 			"Value":   nil,
 		})
 		return
@@ -75,7 +75,7 @@ func Sub(c *gin.Context) {
 	if err != nil {
 		c.JSON(http.StatusUnprocessableEntity, map[string]interface{}{
 			"Success": false,
-			"ErrCode": "422",
+			"ErrCode": "Parameter 'a' is not a number",
 			"Value":   nil,
 		})
 		return
@@ -85,7 +85,7 @@ func Sub(c *gin.Context) {
 	if err != nil {
 		c.JSON(http.StatusUnprocessableEntity, map[string]interface{}{
 			"Success": false,
-			"ErrCode": "422",
+			"ErrCode": "Parameter 'b' is not a number",
 			"Value":   nil,
 		})
 		return
@@ -105,7 +105,7 @@ func Mul(c *gin.Context) {
 	if aString == "" || bString == "" {
 		c.JSON(http.StatusNotAcceptable, map[string]interface{}{
 			"Success": false,
-			"ErrCode": "406",
+			"ErrCode": "One of the parameters haven't value or didn't exist",
 			"Value":   nil,
 		})
 		return
@@ -115,7 +115,7 @@ func Mul(c *gin.Context) {
 	if err != nil {
 		c.JSON(http.StatusUnprocessableEntity, map[string]interface{}{
 			"Success": false,
-			"ErrCode": "422",
+			"ErrCode": "Parameter 'a' is not a number",
 			"Value":   nil,
 		})
 		return
@@ -125,7 +125,7 @@ func Mul(c *gin.Context) {
 	if err != nil {
 		c.JSON(http.StatusUnprocessableEntity, map[string]interface{}{
 			"Success": false,
-			"ErrCode": "422",
+			"ErrCode": "Parameter 'b' is not a number",
 			"Value":   nil,
 		})
 		return
@@ -145,7 +145,7 @@ func Div(c *gin.Context) {
 	if aString == "" || bString == "" {
 		c.JSON(http.StatusNotAcceptable, map[string]interface{}{
 			"Success": false,
-			"ErrCode": "406",
+			"ErrCode": "One of the parameters haven't value or didn't exist",
 			"Value":   nil,
 		})
 		return
@@ -155,7 +155,7 @@ func Div(c *gin.Context) {
 	if err != nil {
 		c.JSON(http.StatusUnprocessableEntity, map[string]interface{}{
 			"Success": false,
-			"ErrCode": "422",
+			"ErrCode": "Parameter 'a' is not a number",
 			"Value":   nil,
 		})
 		return
@@ -165,7 +165,7 @@ func Div(c *gin.Context) {
 	if err != nil {
 		c.JSON(http.StatusUnprocessableEntity, map[string]interface{}{
 			"Success": false,
-			"ErrCode": "422",
+			"ErrCode": "Parameter 'b' is not a number",
 			"Value":   nil,
 		})
 		return
@@ -174,7 +174,7 @@ func Div(c *gin.Context) {
 	if b == 0 {
 		c.JSON(http.StatusUnprocessableEntity, map[string]interface{}{
 			"Success": false,
-			"ErrCode": "422",
+			"ErrCode": "You can't divide by zero",
 			"Value":   nil,
 		})
 		return

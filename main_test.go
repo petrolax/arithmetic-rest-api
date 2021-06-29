@@ -48,7 +48,31 @@ func TestAPI(t *testing.T) {
 			request: "http://0.0.0.0:8081/api/div?a=5&b=0",
 			result: map[string]interface{}{
 				"Success": false,
-				"ErrCode": "422",
+				"ErrCode": "You can't divide by zero",
+				"Value":   nil,
+			},
+		},
+		{
+			request: "http://0.0.0.0:8081/api/add?a=5avs&b=0",
+			result: map[string]interface{}{
+				"Success": false,
+				"ErrCode": "Parameter 'a' is not a number",
+				"Value":   nil,
+			},
+		},
+		{
+			request: "http://0.0.0.0:8081/api/div?a=5&b=",
+			result: map[string]interface{}{
+				"Success": false,
+				"ErrCode": "One of the parameters haven't value or didn't exist",
+				"Value":   nil,
+			},
+		},
+		{
+			request: "http://0.0.0.0:8081/api/div?a=5",
+			result: map[string]interface{}{
+				"Success": false,
+				"ErrCode": "One of the parameters haven't value or didn't exist",
 				"Value":   nil,
 			},
 		},
